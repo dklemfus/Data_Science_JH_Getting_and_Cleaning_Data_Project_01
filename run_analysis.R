@@ -37,6 +37,7 @@ LoadSamsungData <- function(dirPath='./data'){
       train.df <- fread(file.path(dirPath,'train/X_train.txt'))
       # Label training data with descriptive variable names:
       names(train.df) <- feat.labels$V2
+
       # Extract only measurements of mean/standard deviation for each measurement:
       train.df <- train.df[, ..feat.mean.std]
       # Add the Descriptive activity name to the activities in the data set: 
@@ -45,6 +46,9 @@ LoadSamsungData <- function(dirPath='./data'){
                                      by.x='V1', by.y='V1') %>% 
         select(V2)
       train.df$Activity <- train.act.labels
+      # Add train subject data: 
+      train.subject <- fread(file.path(dirPath,'train/subject_train.txt'))
+      train.df$Subject <- train.subject
       
       ##
       ## Load the test data, add feature labels, and extract only std/mean:
@@ -53,6 +57,7 @@ LoadSamsungData <- function(dirPath='./data'){
       test.df <- fread(file.path(dirPath,'test/X_test.txt'))
       # Label test data with descriptive variable names:
       names(test.df) <- feat.labels$V2
+
       # Extract only measurements of mean/standard deviation for each measurement:
       test.df <- test.df[, ..feat.mean.std]
       # Add the Descriptive activity name to the activities in the data set: 
@@ -61,6 +66,9 @@ LoadSamsungData <- function(dirPath='./data'){
                                      by.x='V1', by.y='V1') %>% 
         select(V2)
       test.df$Activity <- test.act.labels
+      # Add train subject data: 
+      test.subject <- fread(file.path(dirPath,'test/subject_test.txt'))
+      test.df$Subject <- test.subject
       
       ##
       ## Merge the training and test sets to create one data set, and return:
@@ -98,7 +106,7 @@ TidySamsungData <- function(merged.df){
   if (!is.null(merged.df) & nrow(merged.df)>0){
     tryCatch({
       # Determine the average of each activity (group) and each subject (column):
-      tidy.df <- merged.df %>% group_by(Activity) %>% 
+      tidy.df <- merged.df %>% group_by(Subject,Activity) %>% 
         summarize_all(list(name=mean))
       
       return(tidy.df)

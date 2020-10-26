@@ -1,10 +1,10 @@
-### Introduction
+## Introduction
 
 This Project was developed as part of the 'Getting and Cleaning Data' Course,
 a requirement for the Data Science Specialization Certification offered by 
 Johns Hopkins / Coursera. 
 
-### 1. Project Description:
+## 1. Project Description:
 
 The purpose of this project is to demonstrate your ability to collect, work with, 
 and clean a data set. The goal is to prepare tidy data that can be used for later
@@ -39,9 +39,9 @@ measurement.
 5. From the data set in step 4, creates a second, independent tidy data set with 
 the average of each variable for each activity and each subject.
 
-### 2. Project Overview: 
+## 2. Project Overview: 
 
-## MAIN SCRIPT: run_analysis.R
+### MAIN SCRIPT: run_analysis.R
 
 The run_analysis.R script consists of two functions that read in the samsung 
 example data, process the data, and produce a tidy set of data. The output 
@@ -49,44 +49,44 @@ dataframe finds the average of each subject, shown by group (activity). For user
 looking to inspect/use the 'untidy' data, it can be accessed via the merged.df
 object written to the global environment. A summary of the functions follow: 
 
-# LoadSamsungData(dirPath): 
+#### LoadSamsungData(dirPath): 
 Function that loads the 'Human Activity Recognition
 Using Smartphones' Data Sets, and combines the 'training' and 'test' sets into a 
 single data set. Extracts only fields related to mean and standard deviation from 
 the data set.
 
-# TidySamsungData(merged.df): 
+#### TidySamsungData(merged.df): 
 Function that uses output from LoadSamsungData() 
 to create a second, independent tidy data set with average of each variable for 
 each activity and each subject. 
 
 
-## DATA: data
+### DATA: data
 
 The 'data' folder contained in this project is an uncompressed version of the 
 provided data. See links in Project Description for further details. 
 
 
-## CODEBOOK:
+### CODEBOOK:
 
 This project contains a CodeBook_Generator.rmd and CodeBook.md file, which 
-generate the 'CodeBook_Generator.html' document. 
+generate the 'CodeBook_Generator.html' document. These markdown documents make 
+use of R-markdown to create an interactive summary that indicates all the 
+variables and summaries calculated, along with other relevant information. 
 
 
-## OUTPUTS:
+### OUTPUTS:
 
 This project contains several outputs: 
 
-# tidy_samsung_summary.csv: 
+#### tidy_samsung_summary.csv: 
 A CSV export of the final dataframe produced by the
 TidySamsungData() function. Automatically written by script to current directory. 
 
-# tidy_samsung_summary.txt: 
+#### tidy_samsung_summary.txt: 
 A text export of the final dataframe produce by the 
 TidySamsungData() function. Automatically written by script to current directory. 
 
-# CodeBook_Generator.html: 
-An HTML codebook output produced by CodeBook_Generator.rmd/
-CodeBook.md. An interactive summary that indicates all the variables and 
-summaries calculated, along with other relevant information. 
+#### CodeBook_Generator.html: 
+An HTML codebook output produced by CodeBook_Generator.rmd/CodeBook.md.
 

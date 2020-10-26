@@ -41,6 +41,7 @@ the average of each variable for each activity and each subject.
 
 ## 2. Project Overview: 
 
+
 ### MAIN SCRIPT (run_analysis.R):
 
 The run_analysis.R script consists of two functions that read in the samsung 
@@ -55,24 +56,26 @@ Using Smartphones' Data Sets, and combines the 'training' and 'test' sets into a
 single data set. Extracts only fields related to mean and standard deviation from 
 the data set.
 
-parameters: dirPath (character) the full path to directory containing dataset
+**parameters:** *dirPath (character)* the full path to directory containing dataset
 
-return: (data frame) a 'raw' data frame containing the single merged data set 
+**return:** *(data frame)* a 'raw' data frame containing the single merged data set 
                                or NULL if files do not exist or are invalid
-Example: 
+**Example:** 
 LoadAnalysisData('./data') 
+
 
 #### TidySamsungData(merged.df): 
 Function that uses output from LoadSamsungData() 
 to create a second, independent tidy data set with average of each variable for 
 each activity and each subject. 
 
-parameters: merged.df (data frame) A data frame output from LoadSamsungData()
+**parameters:** *merged.df (data frame)* A data frame output from LoadSamsungData()
 
-return: (data frame) A tidy data frame containing activity/subject averages 
+**return:** *(data frame)* A tidy data frame containing activity/subject averages 
                      or returns NULL if an exception/error occurs
-Example:
+**Example:**
 TidySamsungData(merged.df)
+
 
 
 ### DATA (./data):
@@ -103,4 +106,3 @@ TidySamsungData() function. Automatically written by script to current directory
 
 #### CodeBook_Generator.html: 
 An HTML codebook output produced by CodeBook_Generator.rmd/CodeBook.md.
-

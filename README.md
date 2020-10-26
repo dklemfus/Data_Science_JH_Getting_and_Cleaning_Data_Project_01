@@ -41,6 +41,7 @@ the average of each variable for each activity and each subject.
 
 ## 2. Project Overview: 
 
+
 ### MAIN SCRIPT (run_analysis.R):
 
 The run_analysis.R script consists of two functions that read in the samsung 
@@ -62,6 +63,7 @@ return: (data frame) a 'raw' data frame containing the single merged data set
 Example: 
 LoadAnalysisData('./data') 
 
+
 #### TidySamsungData(merged.df): 
 Function that uses output from LoadSamsungData() 
 to create a second, independent tidy data set with average of each variable for 
@@ -73,6 +75,7 @@ return: (data frame) A tidy data frame containing activity/subject averages
                      or returns NULL if an exception/error occurs
 Example:
 TidySamsungData(merged.df)
+
 
 
 ### DATA (./data):
@@ -103,4 +106,3 @@ TidySamsungData() function. Automatically written by script to current directory
 
 #### CodeBook_Generator.html: 
 An HTML codebook output produced by CodeBook_Generator.rmd/CodeBook.md.
-

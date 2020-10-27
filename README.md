@@ -4,7 +4,7 @@ This Project was developed as part of the 'Getting and Cleaning Data' Course,
 a requirement for the Data Science Specialization Certification offered by 
 Johns Hopkins / Coursera. 
 
-## 1. Project Description:
+## 1. Project Task:
 
 The purpose of this project is to demonstrate your ability to collect, work with, 
 and clean a data set. The goal is to prepare tidy data that can be used for later
